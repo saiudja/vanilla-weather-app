@@ -74,7 +74,9 @@ li {
 li::first-letter {
   text-transform: capitalize;
 }
-
+#icon {
+  font-size: 46px;
+}
 #temp-now {
   font-size: 46px;
   color: #8ef6e4;
