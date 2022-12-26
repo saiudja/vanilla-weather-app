@@ -51,14 +51,18 @@
             id="currently-button"
           />
         </form>
-        <ul>
-          <li id="current-city"></li>
-          <li id="current-date"></li>
-          <li id="current-weather"></li>
-        </ul>
+        <div class="temperature-main">
+          <ul>
+            <li id="current-city"></li>
+            <li id="current-date"></li>
+            <li id="current-weather"></li>
+          </ul>
+        </div>
+
         <div class="row">
           <div class="col-6">
-            <div class="float-left">
+            <div class="weather-temperature">
+              <img src="" alt="Clear" class="image" id="icon" />
               <span class="temperature" id="temp-now"></span
               ><span id="units">
                 <a href="#" id="celsius-link">°C</a> |
