@@ -14,6 +14,8 @@ function showTemp(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  let datePlace = document.querySelector("#current-date");
+  datePlace.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function search(event) {
@@ -61,8 +63,16 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-let currentTime = new Date();
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -72,17 +82,6 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-
-  let currentDay = days[date.getDay()];
-  let currentHours = date.getHours();
-  let currentMinutes = date.getMinutes();
-  let formatedDate = `${currentDay}, ${currentHours}:${currentMinutes}`;
-  let formatedDatePlus = `${currentDay}, ${currentHours}:0${currentMinutes}`;
-  if (currentMinutes >= 10) {
-    return formatedDate;
-  } else {
-    return formatedDatePlus;
-  }
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
-let datePlace = document.querySelector("#current-date");
-datePlace.innerHTML = formatDate(currentTime);
