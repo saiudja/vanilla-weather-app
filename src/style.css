@@ -70,6 +70,7 @@ li {
   padding: 0;
   margin: 0;
   color: #5e5e8c;
+  text-transform: capitalize;
 }
 
 #temp-now {
@@ -88,7 +89,6 @@ li {
   font-size: 30px;
 }
 #current-weather {
-  font-style: italic;
   font-weight: 400;
 }
 
