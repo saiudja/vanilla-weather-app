@@ -1,7 +1,5 @@
 function showTemp(response) {
   let temperatureCurrent = Math.round(response.data.main.temp);
-  console.log(temperatureCurrent);
-  console.log(response);
   let currentTemp = document.querySelector("#temp-now");
   currentTemp.innerHTML = `${temperatureCurrent}`;
   let cityName = document.querySelector("#current-city");
