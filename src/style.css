@@ -76,15 +76,30 @@ li::first-letter {
 }
 
 #temp-now {
-  font-size: 38px;
+  font-size: 46px;
   color: #8ef6e4;
   font-weight: 800;
 }
 #units {
   position: relative;
-  top: -18px;
+  top: -24px;
   font-size: 12px;
   color: #d59bf6;
+  text-decoration: none;
+}
+a {
+  color: #5e5e8c;
+}
+a:hover {
+  color: #8ef6e4;
+  cursor: default;
+  text-decoration: none;
+}
+.weather-temperature .active {
+  color: #5e5e8c;
+  cursor: default;
+}
+.weather-temperature .active:hover {
   text-decoration: none;
 }
 #current-city {

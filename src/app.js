@@ -1,8 +1,10 @@
 function showTemp(response) {
+  celciumTemperature = response.data.main.temp;
   let currentTemp = document.querySelector("#temp-now");
-  currentTemp.innerHTML = `${Math.round(response.data.main.temp)}`;
+  currentTemp.innerHTML = `${Math.round(celciumTemperature)}`;
   console.log(currentTemp);
   console.log(response);
+
   let cityName = document.querySelector("#current-city");
   cityName.innerHTML = `${response.data.name}`;
   let currentWeather = document.querySelector("#current-weather");
@@ -54,14 +56,21 @@ currentlyTemp.addEventListener(
 );
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  let temperatureElement = document.querySelector("#temp-now");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheittemperature = (celciumTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheittemperature);
 }
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  let temperatureElement = document.querySelector("#temp-now");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celciumTemperature);
 }
+
+let celciumTemperature = null;
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
