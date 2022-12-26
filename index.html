@@ -52,7 +52,7 @@
           />
         </form>
         <div class="temperature-main">
-          <ul>
+          <ul class="current">
             <li id="current-city"></li>
             <li id="current-date"></li>
             <li id="current-weather"></li>
@@ -62,35 +62,23 @@
         <div class="row">
           <div class="col-6">
             <div class="weather-temperature">
-              <img src="" alt="Clear" class="image" id="icon" />
-              <span class="temperature" id="temp-now"></span
-              ><span id="units">
-                <a href="#" class="active" id="celsius-link">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a>
-              </span>
+              <img src="" alt="" class="image" id="icon" />
+              <div class="temperature">
+                <strong id="temp-now"> </strong
+                ><span id="units"
+                  ><a href="#" class="active" id="celsius-link">°C | </a
+                  ><a href="#" id="fahrenheit-link">°F</a></span
+                >
+              </div>
             </div>
           </div>
 
           <div class="col-6">
             <ul class="weather">
-              <li id="precipitation"></li>
               <li id="humidity"></li>
               <li id="wind"></li>
             </ul>
           </div>
-        </div>
-        <div class="row">
-          <div class="col">Thu</div>
-          <div class="col">Fri</div>
-          <div class="col">Sat</div>
-          <div class="col">Sun</div>
-          <div class="col">Mon</div>
-          <div class="w-100"></div>
-          <div class="col" id="tendays"></div>
-          <div class="col"><i class="fa-solid fa-cloud-sun-rain"></i></div>
-          <div class="col"><i class="fa-solid fa-cloud-sun"></i></div>
-          <div class="col"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
-          <div class="col"><i class="fa-solid fa-sun"></i></div>
         </div>
       </div>
       <small class="see-more">

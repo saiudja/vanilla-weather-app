@@ -9,8 +9,6 @@ function showTemp(response) {
   cityName.innerHTML = `${response.data.name}`;
   let currentWeather = document.querySelector("#current-weather");
   currentWeather.innerHTML = `${response.data.weather[0].description}`;
-  let precipitation = document.querySelector("#precipitation");
-  precipitation.innerHTML = `Precipitation: ${response.data.main.precipitation}`;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
   let wind = document.querySelector("#wind");
